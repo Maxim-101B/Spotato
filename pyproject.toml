@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "audio_player"
+version = "0.1.0"
+description = "Advanced Audio Player with Qt Interface"
+authors = [{name = "Your Name", email = "your@email.com"}]
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+
+dependencies = [
+    "PySide6>=6.4.0",
+    "mutagen>=1.46.0",  # Для работы с метаданными аудио
+    "python-dotenv>=0.19.0"
+]
+
+[tool.setuptools.packages]
+find = {}
+
+[project.scripts]
+audio-player = "audio_player.client.main:main"
