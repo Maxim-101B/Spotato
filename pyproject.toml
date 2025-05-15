@@ -3,10 +3,10 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "audio_player"
+name = "spotato"
 version = "0.1.0"
-description = "Advanced Audio Player with Qt Interface"
-authors = [{name = "Your Name", email = "your@email.com"}]
+description = "Advanced Audio Player"
+authors = [{name = "Maxim_101B", email = "maximmelnik23328@gmail.com"}]
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
@@ -21,4 +21,4 @@ dependencies = [
 find = {}
 
 [project.scripts]
-audio-player = "audio_player.client.main:main"
+spotato = "app.client.main:main"

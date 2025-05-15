@@ -1,2 +1,2 @@
-from .ui_main import Ui_MainWindow
+from .window import MainWindow
 from . import res_rc
