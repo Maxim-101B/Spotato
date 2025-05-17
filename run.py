@@ -27,7 +27,7 @@ class ChangeHandler(FileSystemEventHandler):
         )
 
 if __name__ == "__main__":
-    print("🚀 Запуск аудиоплеера с hot-reload...")
+    print("🚀 hot-reload...")
     event_handler = ChangeHandler()
     observer = Observer()
     observer.schedule(event_handler, path="./app", recursive=True)

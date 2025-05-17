@@ -13,7 +13,7 @@ def main():
     window = MainWindow()
     window.resize(1280, 720)
     window.setMinimumSize(1280, 720)
-    window.setMaximumSize(1920, 1080)
+    window.setMaximumSize(1600, 900)
     window.show()
 
     sys.exit(app.exec())
