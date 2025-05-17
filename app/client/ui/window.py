@@ -11,7 +11,6 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        # Переносим ВСЕ атрибуты из оригинального MainApp
         self.extractor = ExtractMeta()
         self.player = AudioPlayer()
         self.utils = Utilities()
@@ -20,15 +19,13 @@ class MainWindow(QMainWindow):
         self.timer = QTimer()
         self.timer.timeout.connect(self.set_crnt_time)
         
-        # Добавляем недостающий атрибут
-        self.is_playing = False  # Было self._is_playing в одном из методов
+        self.is_playing = False
         
-        # Настройка UI
         self.ui.playback_btn.setEnabled(False)
         self.ui.SelectAudioBtn.clicked.connect(self.select_song)
         self.ui.playback_btn.pressed.connect(self.toggle_playback)
 
-    # Далее КОПИРУЕМ ВСЕ МЕТОДЫ ИЗ MainApp БЕЗ ИЗМЕНЕНИЙ:
+
     def set_dir(self, directory):
         self.dir = directory
 
@@ -58,7 +55,7 @@ class MainWindow(QMainWindow):
             self.ui.TrackInfo.setText("Метаданные отсутствуют")
 
     def toggle_playback(self):
-        self.is_playing = not self.is_playing  # Исправлено на is_playing
+        self.is_playing = not self.is_playing 
         self.player.toggle_play_pause()
         self.timer.start(1000) if self.is_playing else self.timer.stop()
 
