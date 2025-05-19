@@ -32,7 +32,7 @@
    <string>MainWindow</string>
   </property>
   <property name="layoutDirection">
-   <enum>Qt::LeftToRight</enum>
+   <enum>Qt::LayoutDirection::RightToLeft</enum>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
@@ -46,7 +46,7 @@
 }</string>
   </property>
   <property name="tabShape">
-   <enum>QTabWidget::Rounded</enum>
+   <enum>QTabWidget::TabShape::Rounded</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="sizePolicy">
@@ -109,7 +109,7 @@
        </size>
       </property>
       <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
+       <enum>Qt::LayoutDirection::LeftToRight</enum>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_5">
        <property name="spacing">
@@ -241,7 +241,7 @@ QLabel {
                    </sizepolicy>
                   </property>
                   <property name="layoutDirection">
-                   <enum>Qt::LeftToRight</enum>
+                   <enum>Qt::LayoutDirection::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton {
@@ -290,7 +290,7 @@ QLabel{
                    <property name="bottomMargin">
                     <number>0</number>
                    </property>
-                   <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+                   <item alignment="Qt::AlignmentFlag::AlignLeft">
                     <widget class="QFrame" name="title_pm">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -314,7 +314,7 @@ QLabel{
                       <property name="bottomMargin">
                        <number>0</number>
                       </property>
-                      <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                      <item>
                        <widget class="QLabel" name="favicon">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -345,7 +345,7 @@ QLabel{
                         </property>
                        </widget>
                       </item>
-                      <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                      <item>
                        <widget class="QLabel" name="mediateka_lb">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -367,7 +367,7 @@ QLabel{
                      </layout>
                     </widget>
                    </item>
-                   <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+                   <item>
                     <widget class="QFrame" name="header_btn">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -376,7 +376,7 @@ QLabel{
                       </sizepolicy>
                      </property>
                      <property name="layoutDirection">
-                      <enum>Qt::LeftToRight</enum>
+                      <enum>Qt::LayoutDirection::LeftToRight</enum>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_14">
                       <property name="spacing">
@@ -426,7 +426,7 @@ QLabel{
                </layout>
               </widget>
              </item>
-             <item alignment="Qt::AlignLeft">
+             <item alignment="Qt::AlignmentFlag::AlignLeft">
               <widget class="QFrame" name="switch_mode">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -598,19 +598,19 @@ QPushButton:checked {
                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="frameShape">
-                   <enum>QFrame::NoFrame</enum>
+                   <enum>QFrame::Shape::NoFrame</enum>
                   </property>
                   <property name="lineWidth">
                    <number>1</number>
                   </property>
                   <property name="horizontalScrollBarPolicy">
-                   <enum>Qt::ScrollBarAlwaysOff</enum>
+                   <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
                   </property>
                   <property name="editTriggers">
-                   <set>QAbstractItemView::NoEditTriggers</set>
+                   <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
                   </property>
                   <property name="selectionBehavior">
-                   <enum>QAbstractItemView::SelectRows</enum>
+                   <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -619,16 +619,16 @@ QPushButton:checked {
                    </size>
                   </property>
                   <property name="verticalScrollMode">
-                   <enum>QAbstractItemView::ScrollPerPixel</enum>
+                   <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
                   </property>
                   <property name="horizontalScrollMode">
-                   <enum>QAbstractItemView::ScrollPerPixel</enum>
+                   <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
                   </property>
                   <property name="spacing">
                    <number>5</number>
                   </property>
                   <property name="viewMode">
-                   <enum>QListView::ListMode</enum>
+                   <enum>QListView::ViewMode::ListMode</enum>
                   </property>
                   <property name="uniformItemSizes">
                    <bool>true</bool>
@@ -668,14 +668,49 @@ QPushButton:checked {
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">#MainBar {
+          <string notr="true">QScrollArea {
+    background-color: rgb(18, 18, 18);
+    border: none;
+}
+
+QFrame {
+    background-color: rgb(18, 18, 18);
+    border: none;
+}
+
+#MainBar {
 	border-radius: 10px;
 	background-color: rgb(18, 18, 18);
 	color: white;
-}</string>
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 10px;    
+}
+
+#playlist_Widget{
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+QLabel{
+    font-family: &quot;Onest ExtraBold&quot;;
+    font-weight: 800; /* Extra Bold */
+    font-size: 21px;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    qproperty-wordWrap: false; /* Перенос слов */
+    qproperty-indent: 0; /* Отступ первой строки */
+    qproperty-margin: 0; /* Внешние отступы */
+}
+
+</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <property name="spacing">
@@ -694,142 +729,539 @@ QPushButton:checked {
            <number>0</number>
           </property>
           <item>
-           <widget class="QFrame" name="Content_Main">
+           <widget class="QScrollArea" name="scrollArea">
             <property name="styleSheet">
-             <string notr="true">QLabel{
-    font-family: &quot;Onest ExtraBold&quot;;
-    font-weight: 800; /* Extra Bold */
-    font-size: 21px;
-    color: rgb(255, 255, 255);
-    background-color: transparent;
+             <string notr="true">/* Вертикальная полоса прокрутки в стиле Spotify */
+QScrollBar:vertical {
     border: none;
-    padding: 0px;
-    margin: 0px;
-    qproperty-wordWrap: false; /* Перенос слов */
-    qproperty-indent: 0; /* Отступ первой строки */
-    qproperty-margin: 0; /* Внешние отступы */
+    background: #121212; /* Темный фон как в Spotify */
+    width: 10px; /* Ширина полосы прокрутки */
+    margin: 0px 0px 0px 0px;
+}
+
+/* Слайдер (handle) полосы прокрутки */
+QScrollBar::handle:vertical {
+    background: #535353; /* Серый цвет как у неактивных элементов */
+    min-height: 30px; /* Минимальная высота handle */
+    max-height: 40px;
+    border-radius: 5px; /* Закругленные углы */
+}
+
+/* Слайдер при наведении */
+QScrollBar::handle:vertical:hover {
+    background: #686868; /* Светлее при наведении */
+}
+
+/* Слайдер при нажатии */
+QScrollBar::handle:vertical:pressed {
+    background: #1DB954; /* Зеленый Spotify при активном взаимодействии */
+}
+
+/* Верхняя и нижняя кнопки (стрелки) - скрываем */
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: none;
+    background: none;
+    height: 0px;
+}
+
+/* Дополнительное пространство сверху и снизу */
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+/* Горизонтальная полоса - скрываем */
+QScrollBar:horizontal {
+    height: 0px;
 }</string>
             </property>
-            <layout class="QVBoxLayout" name="Content_M">
-             <property name="spacing">
-              <number>0</number>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="widgetResizable">
+             <bool>true</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+            <widget class="QWidget" name="scroll_widget">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>598</width>
+               <height>1053</height>
+              </rect>
              </property>
-             <property name="leftMargin">
-              <number>0</number>
+             <property name="styleSheet">
+              <string notr="true">#scroll_widget {
+    background-color: rgb(18, 18, 18);
+    border: none;
+}</string>
              </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QFrame" name="crnt_playlist">
-               <layout class="QHBoxLayout" name="current_playlist">
-                <property name="spacing">
-                 <number>0</number>
+             <layout class="QVBoxLayout" name="verticalLayout_20">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item alignment="Qt::AlignmentFlag::AlignTop">
+               <widget class="QFrame" name="playlist_frame">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
                 </property>
-                <property name="leftMargin">
-                 <number>0</number>
+                <property name="styleSheet">
+                 <string notr="true"/>
                 </property>
-                <property name="topMargin">
-                 <number>0</number>
-                </property>
-                <property name="rightMargin">
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QFrame" name="content">
-                  <property name="styleSheet">
-                   <string notr="true">#playlistWidget_frame{
+                <layout class="QVBoxLayout" name="p">
+                 <property name="spacing">
+                  <number>5</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item alignment="Qt::AlignmentFlag::AlignTop">
+                  <widget class="QFrame" name="main_top_frame">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>200</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>200</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">#main_top_frame{
+	border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+	padding: 2px;
+}
+
+QLabel{
+	font-size: 52px;
+}</string>
+                   </property>
+                   <layout class="QVBoxLayout" name="playlist_cover">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QFrame" name="main_top">
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_15">
+                       <property name="spacing">
+                        <number>8</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="playlist_cov">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize">
+                          <size>
+                           <width>130</width>
+                           <height>130</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="pixmap">
+                          <pixmap resource="res.qrc">:/icon/icons/music_info.png</pixmap>
+                         </property>
+                         <property name="scaledContents">
+                          <bool>true</bool>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="playlist_name">
+                         <property name="font">
+                          <font>
+                           <family>Onest ExtraBold</family>
+                           <pointsize>-1</pointsize>
+                           <fontweight>ExtraBold</fontweight>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Любимые треки</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item alignment="Qt::AlignmentFlag::AlignTop">
+                  <widget class="QFrame" name="list_control">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>52</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">#list_control{
 	padding-left: 10px;
 	padding-right: 10px;
 }
 
-#playlistWidget{
+QPushButton{
+	padding-: 0px;
+	margin: 0px;
 	border: none;
-	background-color: rgba(0, 0, 0, 0);
-}
-
-QLabel {
-  	color: white;
 }</string>
-                  </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_3">
-                   <property name="spacing">
-                    <number>0</number>
                    </property>
-                   <property name="leftMargin">
-                    <number>0</number>
+                   <layout class="QHBoxLayout" name="l">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item alignment="Qt::AlignmentFlag::AlignLeft">
+                     <widget class="QFrame" name="playback_controls">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+	padding-: 0px;
+	margin: 0px;
+	border: none;
+	border-radius: 0px;
+}</string>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_19">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QPushButton" name="playback_btn_list">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="res.qrc">
+                           <normaloff>:/icon/icons/playlist_play.svg</normaloff>:/icon/icons/playlist_play.svg</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>45</width>
+                           <height>45</height>
+                          </size>
+                         </property>
+                         <property name="checkable">
+                          <bool>true</bool>
+                         </property>
+                         <property name="autoExclusive">
+                          <bool>false</bool>
+                         </property>
+                         <property name="default">
+                          <bool>false</bool>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="shuffle_btn_list">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>30</width>
+                           <height>30</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>D:/Downloads/shuffle.png</normaloff>D:/Downloads/shuffle.png</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>25</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item alignment="Qt::AlignmentFlag::AlignRight">
+                     <widget class="QFrame" name="list_params">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>50</height>
+                       </size>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_16">
+                       <property name="spacing">
+                        <number>3</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QPushButton" name="add_music_btn">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize">
+                          <size>
+                           <width>25</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="res.qrc">
+                           <normaloff>:/icon/icons/add_circle.svg</normaloff>:/icon/icons/add_circle.svg</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>30</width>
+                           <height>30</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="sort_playlist">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="res.qrc">
+                           <normaloff>:/icon/icons/format_list_bullet.svg</normaloff>:/icon/icons/format_list_bullet.svg</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>30</width>
+                           <height>30</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="playlist_widget_frame">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
                    </property>
-                   <property name="topMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="rightMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
-                   <item>
-                    <widget class="QLabel" name="list_cover">
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>202</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>202</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>Current playlist</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="list_controls">
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>50</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>Nav bar</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QFrame" name="playlistWidget_frame">
-                     <property name="styleSheet">
-                      <string notr="true">/* Основные стили таблицы */
+                   <layout class="QVBoxLayout" name="verticalLayout_18">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item alignment="Qt::AlignmentFlag::AlignTop">
+                     <widget class="QTableWidget" name="playlist_Widget">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Onest ExtraBold</family>
+                        <pointsize>-1</pointsize>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>true</kerning>
+                       </font>
+                      </property>
+                      <property name="contextMenuPolicy">
+                       <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+                      </property>
+                      <property name="layoutDirection">
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
+                      </property>
+                      <property name="autoFillBackground">
+                       <bool>false</bool>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">/* Основные стили таблицы */
 QTableWidget {
     background-color: rgb(18, 18, 18);
     color: white;
     gridline-color: rgba(255, 255, 255, 30%);  /* Полупрозрачные линии */
-    border: none;
+	border: none;
     outline: none;  /* Убираем фокусную рамку */
     font-size: 14px; 
 	font-family: &quot;Onest ExtraBold&quot;;
@@ -859,6 +1291,7 @@ QHeaderView::section:horizontal {
 QHeaderView::section:vertical {
     border-right: none;
     border-bottom: none;
+	qproperty-alignment: 'AlignCenter';
 }
 
 /* Угловой элемент */
@@ -878,156 +1311,137 @@ QTableWidget::item:selected {
     background-color: rgba(255, 255, 255, 10%);
 }
 
-/* Эффект при наведении */
-QTableWidget::item:hover {
-    background-color: rgba(255, 255, 255, 5%);
-}
-
 /* Убираем пунктирное выделение */
 QTableWidget::item:focus {
     outline: none;
 }</string>
-                     </property>
-                     <layout class="QVBoxLayout" name="verticalLayout_9">
-                      <property name="spacing">
-                       <number>0</number>
                       </property>
-                      <property name="leftMargin">
-                       <number>0</number>
+                      <property name="verticalScrollBarPolicy">
+                       <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
                       </property>
-                      <property name="topMargin">
-                       <number>0</number>
+                      <property name="horizontalScrollBarPolicy">
+                       <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
                       </property>
-                      <property name="rightMargin">
-                       <number>0</number>
+                      <property name="sizeAdjustPolicy">
+                       <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
                       </property>
-                      <property name="bottomMargin">
-                       <number>0</number>
+                      <property name="editTriggers">
+                       <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
                       </property>
-                      <item>
-                       <widget class="QTableWidget" name="playlistWidget">
-                        <property name="sizePolicy">
-                         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                          <horstretch>0</horstretch>
-                          <verstretch>0</verstretch>
-                         </sizepolicy>
-                        </property>
-                        <property name="layoutDirection">
-                         <enum>Qt::LeftToRight</enum>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true"/>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
-                        </property>
-                        <property name="lineWidth">
-                         <number>1</number>
-                        </property>
-                        <property name="horizontalScrollBarPolicy">
-                         <enum>Qt::ScrollBarAlwaysOff</enum>
-                        </property>
-                        <property name="sizeAdjustPolicy">
-                         <enum>QAbstractScrollArea::AdjustToContents</enum>
-                        </property>
-                        <property name="autoScroll">
-                         <bool>false</bool>
-                        </property>
-                        <property name="editTriggers">
-                         <set>QAbstractItemView::NoEditTriggers</set>
-                        </property>
-                        <property name="tabKeyNavigation">
-                         <bool>true</bool>
-                        </property>
-                        <property name="selectionMode">
-                         <enum>QAbstractItemView::SingleSelection</enum>
-                        </property>
-                        <property name="selectionBehavior">
-                         <enum>QAbstractItemView::SelectRows</enum>
-                        </property>
-                        <property name="textElideMode">
-                         <enum>Qt::ElideRight</enum>
-                        </property>
-                        <property name="verticalScrollMode">
-                         <enum>QAbstractItemView::ScrollPerPixel</enum>
-                        </property>
-                        <property name="showGrid">
-                         <bool>false</bool>
-                        </property>
-                        <property name="gridStyle">
-                         <enum>Qt::NoPen</enum>
-                        </property>
-                        <property name="wordWrap">
-                         <bool>true</bool>
-                        </property>
-                        <property name="cornerButtonEnabled">
-                         <bool>false</bool>
-                        </property>
-                        <property name="rowCount">
-                         <number>0</number>
-                        </property>
-                        <property name="columnCount">
-                         <number>4</number>
-                        </property>
-                        <attribute name="horizontalHeaderVisible">
-                         <bool>true</bool>
-                        </attribute>
-                        <attribute name="horizontalHeaderCascadingSectionResizes">
-                         <bool>false</bool>
-                        </attribute>
-                        <attribute name="horizontalHeaderHighlightSections">
-                         <bool>false</bool>
-                        </attribute>
-                        <attribute name="horizontalHeaderStretchLastSection">
-                         <bool>true</bool>
-                        </attribute>
-                        <attribute name="verticalHeaderVisible">
-                         <bool>true</bool>
-                        </attribute>
-                        <attribute name="verticalHeaderCascadingSectionResizes">
-                         <bool>false</bool>
-                        </attribute>
-                        <attribute name="verticalHeaderHighlightSections">
-                         <bool>false</bool>
-                        </attribute>
-                        <attribute name="verticalHeaderShowSortIndicator" stdset="0">
-                         <bool>false</bool>
-                        </attribute>
-                        <attribute name="verticalHeaderStretchLastSection">
-                         <bool>false</bool>
-                        </attribute>
-                        <column>
-                         <property name="text">
-                          <string>Title</string>
-                         </property>
-                        </column>
-                        <column>
-                         <property name="text">
-                          <string>Artist</string>
-                         </property>
-                        </column>
-                        <column>
-                         <property name="text">
-                          <string>Album</string>
-                         </property>
-                        </column>
-                        <column>
-                         <property name="text">
-                          <string>Duration</string>
-                         </property>
-                        </column>
-                       </widget>
-                      </item>
-                     </layout>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-            </layout>
+                      <property name="tabKeyNavigation">
+                       <bool>false</bool>
+                      </property>
+                      <property name="showDropIndicator" stdset="0">
+                       <bool>false</bool>
+                      </property>
+                      <property name="dragDropOverwriteMode">
+                       <bool>false</bool>
+                      </property>
+                      <property name="selectionMode">
+                       <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>0</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="verticalScrollMode">
+                       <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
+                      </property>
+                      <property name="horizontalScrollMode">
+                       <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
+                      </property>
+                      <property name="showGrid">
+                       <bool>false</bool>
+                      </property>
+                      <property name="gridStyle">
+                       <enum>Qt::PenStyle::NoPen</enum>
+                      </property>
+                      <property name="sortingEnabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                      <property name="cornerButtonEnabled">
+                       <bool>true</bool>
+                      </property>
+                      <property name="rowCount">
+                       <number>20</number>
+                      </property>
+                      <property name="columnCount">
+                       <number>3</number>
+                      </property>
+                      <attribute name="horizontalHeaderVisible">
+                       <bool>true</bool>
+                      </attribute>
+                      <attribute name="horizontalHeaderMinimumSectionSize">
+                       <number>50</number>
+                      </attribute>
+                      <attribute name="horizontalHeaderDefaultSectionSize">
+                       <number>160</number>
+                      </attribute>
+                      <attribute name="horizontalHeaderStretchLastSection">
+                       <bool>true</bool>
+                      </attribute>
+                      <attribute name="verticalHeaderMinimumSectionSize">
+                       <number>30</number>
+                      </attribute>
+                      <attribute name="verticalHeaderStretchLastSection">
+                       <bool>false</bool>
+                      </attribute>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <column>
+                       <property name="text">
+                        <string>Название</string>
+                       </property>
+                       <property name="textAlignment">
+                        <set>AlignLeading|AlignVCenter</set>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Альбом</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Длительность</string>
+                       </property>
+                      </column>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
            </widget>
           </item>
          </layout>
@@ -1062,7 +1476,7 @@ QTableWidget::item:focus {
 </string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
          </property>
          <property name="flat">
           <bool>true</bool>
@@ -1085,8 +1499,14 @@ QTableWidget::item:focus {
           </property>
           <item>
            <widget class="QFrame" name="Content_R">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
+             <enum>Qt::LayoutDirection::LeftToRight</enum>
             </property>
             <property name="styleSheet">
              <string notr="true">QLabel{
@@ -1406,7 +1826,7 @@ QPushButton{
                          </sizepolicy>
                         </property>
                         <property name="layoutDirection">
-                         <enum>Qt::RightToLeft</enum>
+                         <enum>Qt::LayoutDirection::RightToLeft</enum>
                         </property>
                         <layout class="QHBoxLayout" name="horizontalLayout_3">
                          <property name="spacing">
@@ -1465,7 +1885,7 @@ QPushButton{
                             <string>Аудиофайл не выбран</string>
                            </property>
                            <property name="alignment">
-                            <set>Qt::AlignCenter</set>
+                            <set>Qt::AlignmentFlag::AlignCenter</set>
                            </property>
                            <property name="indent">
                             <number>0</number>
@@ -1508,7 +1928,7 @@ QPushButton{
                          <string/>
                         </property>
                         <property name="wordWrap">
-                         <bool>true</bool>
+                         <bool>false</bool>
                         </property>
                        </widget>
                       </item>
@@ -1591,7 +2011,7 @@ border: none;</string>
           </size>
          </property>
          <property name="layoutDirection">
-          <enum>Qt::RightToLeft</enum>
+          <enum>Qt::LayoutDirection::RightToLeft</enum>
          </property>
          <property name="styleSheet">
           <string notr="true">#control_panel{
@@ -1618,7 +2038,7 @@ border: none;</string>
            <number>0</number>
           </property>
           <item>
-           <widget class="QFrame" name="verticalFrame">
+           <widget class="QFrame" name="right_panel">
             <property name="minimumSize">
              <size>
               <width>350</width>
@@ -1630,6 +2050,18 @@ border: none;</string>
               <width>350</width>
               <height>16777215</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+    font-family: &quot;Onest ExtraBold&quot;;
+    font-weight: 800; /* Extra Bold */
+    font-size: 14px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_14">
              <property name="spacing">
@@ -1647,6 +2079,163 @@ border: none;</string>
              <property name="bottomMargin">
               <number>0</number>
              </property>
+             <item>
+              <widget class="QFrame" name="horizontalFrame">
+               <layout class="QHBoxLayout" name="horizontalLayout_11">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QFrame" name="volume_settings">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">/* Стиль для горизонтального QSlider (громкость) как в Spotify */
+QSlider {
+    min-height: 24px;
+    max-height: 24px;
+}
+
+/* Фоновая дорожка */
+QSlider::groove:horizontal {
+    height: 4px;
+    background: #535353;
+    border-radius: 2px;
+}
+
+/* Заполненная часть дорожки */
+QSlider::sub-page:horizontal {
+    height: 4px;
+    background: #1DB954;  /* фирменный зеленый Spotify */
+    border-radius: 2px;
+}
+
+/* Ползунок (по умолчанию) */
+QSlider::handle:horizontal {
+    width: 12px;
+    height: 12px;
+    margin: -4px 0;  /* центрирование по вертикали */
+    background: white;
+    border: none;
+    border-radius: 6px;
+}
+
+/* Ползунок при нажатии */
+QSlider::handle:horizontal:pressed {
+    width: 16px;
+    height: 16px;
+    margin: -6px 0;
+    border-radius: 8px;
+    background: #1ED760;  /* светлый зеленый при активации */
+}
+
+/* Неактивное состояние */
+QSlider:disabled {
+    opacity: 0.3;
+}
+
+/* Дополнительно: тонкая анимация (если поддерживается) */
+QSlider::handle:horizontal {
+    transition: all 0.2s ease;
+}</string>
+                  </property>
+                  <layout class="QHBoxLayout" name="vol">
+                   <property name="spacing">
+                    <number>10</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QSlider" name="volume_slider">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>24</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>24</height>
+                      </size>
+                     </property>
+                     <property name="layoutDirection">
+                      <enum>Qt::LayoutDirection::LeftToRight</enum>
+                     </property>
+                     <property name="value">
+                      <number>99</number>
+                     </property>
+                     <property name="orientation">
+                      <enum>Qt::Orientation::Horizontal</enum>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="vol_icon">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>35</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="pixmap">
+                      <pixmap resource="res.qrc">:/icon/icons/volume_up.svg</pixmap>
+                     </property>
+                     <property name="scaledContents">
+                      <bool>true</bool>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignmentFlag::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
             </layout>
            </widget>
           </item>
@@ -1665,7 +2254,7 @@ border: none;</string>
              </size>
             </property>
             <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
+             <enum>Qt::LayoutDirection::LeftToRight</enum>
             </property>
             <property name="styleSheet">
              <string notr="true">#playback_btn{
@@ -1678,7 +2267,7 @@ QLabel{
     font-family: &quot;Onest ExtraBold&quot;;
     font-weight: 800; /* Extra Bold */
     font-size: 14px;
-    color: rgb(255, 255, 255);
+    color: white;
     background-color: transparent;
     border: none;
     padding: 0px;
@@ -1701,17 +2290,17 @@ QLabel{
              <property name="bottomMargin">
               <number>0</number>
              </property>
-             <item>
+             <item alignment="Qt::AlignmentFlag::AlignHCenter">
               <widget class="QFrame" name="dj">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_12">
                 <property name="spacing">
-                 <number>0</number>
+                 <number>15</number>
                 </property>
                 <property name="leftMargin">
                  <number>0</number>
@@ -1725,7 +2314,42 @@ QLabel{
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
-                <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                <item>
+                 <widget class="QPushButton" name="skip_previous">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>30</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>30</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="res.qrc">
+                    <normaloff>:/icon/icons/skip_previous.svg</normaloff>:/icon/icons/skip_previous.svg</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>45</width>
+                    <height>45</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
                  <widget class="QPushButton" name="playback_btn">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -1758,7 +2382,7 @@ QLabel{
                   </property>
                   <property name="iconSize">
                    <size>
-                    <width>40</width>
+                    <width>35</width>
                     <height>35</height>
                    </size>
                   </property>
@@ -1770,6 +2394,41 @@ QLabel{
                   </property>
                   <property name="autoRepeat">
                    <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="skip_next">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>30</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>30</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="res.qrc">
+                    <normaloff>:/icon/icons/skip_next.svg</normaloff>:/icon/icons/skip_next.svg</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>45</width>
+                    <height>45</height>
+                   </size>
                   </property>
                  </widget>
                 </item>
@@ -1833,7 +2492,7 @@ QSlider::handle:horizontal {
                    <string>00:00</string>
                   </property>
                   <property name="alignment">
-                   <set>Qt::AlignCenter</set>
+                   <set>Qt::AlignmentFlag::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
@@ -1867,7 +2526,7 @@ QSlider::handle:horizontal {
                    <number>10</number>
                   </property>
                   <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
+                   <enum>Qt::Orientation::Horizontal</enum>
                   </property>
                  </widget>
                 </item>
@@ -1883,13 +2542,13 @@ QSlider::handle:horizontal {
                    <string>00:00</string>
                   </property>
                   <property name="textFormat">
-                   <enum>Qt::AutoText</enum>
+                   <enum>Qt::TextFormat::AutoText</enum>
                   </property>
                   <property name="scaledContents">
                    <bool>false</bool>
                   </property>
                   <property name="alignment">
-                   <set>Qt::AlignCenter</set>
+                   <set>Qt::AlignmentFlag::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
@@ -1900,7 +2559,7 @@ QSlider::handle:horizontal {
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="verticalFrame_2">
+           <widget class="QFrame" name="left_panel">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
               <horstretch>0</horstretch>
