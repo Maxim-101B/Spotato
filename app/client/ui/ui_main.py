@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'ui_main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.2
+## Created by: Qt User Interface Compiler version 6.9.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -421,7 +421,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.scroll_widget = QWidget()
         self.scroll_widget.setObjectName(u"scroll_widget")
-        self.scroll_widget.setGeometry(QRect(0, 0, 598, 1053))
+        self.scroll_widget.setGeometry(QRect(0, 0, 608, 594))
         self.scroll_widget.setStyleSheet(u"#scroll_widget {\n"
 "    background-color: rgb(18, 18, 18);\n"
 "    border: none;\n"
@@ -499,6 +499,7 @@ class Ui_MainWindow(object):
         sizePolicy2.setHeightForWidth(self.list_control.sizePolicy().hasHeightForWidth())
         self.list_control.setSizePolicy(sizePolicy2)
         self.list_control.setMinimumSize(QSize(0, 52))
+        self.list_control.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.list_control.setStyleSheet(u"#list_control{\n"
 "	padding-left: 10px;\n"
 "	padding-right: 10px;\n"
@@ -508,38 +509,37 @@ class Ui_MainWindow(object):
 "	padding-: 0px;\n"
 "	margin: 0px;\n"
 "	border: none;\n"
+"	border-radius: 10px;\n"
+"}\n"
+"\n"
+"#sort_list:hover, #shuffle_btn_list:hover{\n"
+"    background-color: rgba(56, 56, 56, 240); \n"
 "}")
         self.l = QHBoxLayout(self.list_control)
         self.l.setSpacing(0)
         self.l.setObjectName(u"l")
-        self.l.setContentsMargins(0, 0, 0, 0)
+        self.l.setContentsMargins(0, 5, 0, 0)
         self.playback_controls = QFrame(self.list_control)
         self.playback_controls.setObjectName(u"playback_controls")
         sizePolicy3.setHeightForWidth(self.playback_controls.sizePolicy().hasHeightForWidth())
         self.playback_controls.setSizePolicy(sizePolicy3)
         self.playback_controls.setMinimumSize(QSize(0, 0))
-        self.playback_controls.setStyleSheet(u"QPushButton{\n"
-"	padding-: 0px;\n"
-"	margin: 0px;\n"
-"	border: none;\n"
-"	border-radius: 0px;\n"
-"}")
+        self.playback_controls.setStyleSheet(u"")
         self.horizontalLayout_19 = QHBoxLayout(self.playback_controls)
-        self.horizontalLayout_19.setSpacing(0)
+        self.horizontalLayout_19.setSpacing(10)
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
         self.horizontalLayout_19.setContentsMargins(0, 0, 0, 0)
         self.playback_btn_list = QPushButton(self.playback_controls)
         self.playback_btn_list.setObjectName(u"playback_btn_list")
         sizePolicy3.setHeightForWidth(self.playback_btn_list.sizePolicy().hasHeightForWidth())
         self.playback_btn_list.setSizePolicy(sizePolicy3)
-        self.playback_btn_list.setMinimumSize(QSize(0, 0))
-        self.playback_btn_list.setMaximumSize(QSize(16777215, 16777215))
+        self.playback_btn_list.setMaximumSize(QSize(50, 50))
         icon1 = QIcon()
-        icon1.addFile(u":/icon/icons/playlist_play.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u":/icon/icons/play_circle.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u":/icon/icons/pause_circle.svg", QSize(), QIcon.Mode.Normal, QIcon.State.On)
         self.playback_btn_list.setIcon(icon1)
-        self.playback_btn_list.setIconSize(QSize(45, 45))
+        self.playback_btn_list.setIconSize(QSize(60, 60))
         self.playback_btn_list.setCheckable(True)
-        self.playback_btn_list.setAutoExclusive(False)
 
         self.horizontalLayout_19.addWidget(self.playback_btn_list)
 
@@ -563,32 +563,42 @@ class Ui_MainWindow(object):
         sizePolicy3.setHeightForWidth(self.list_params.sizePolicy().hasHeightForWidth())
         self.list_params.setSizePolicy(sizePolicy3)
         self.list_params.setMinimumSize(QSize(0, 50))
+        self.list_params.setStyleSheet(u"QComboBox{\n"
+"	font: 700 10pt \"Onest\";\n"
+"	background-color: transparent;\n"
+"	border: none;\n"
+"}")
         self.horizontalLayout_16 = QHBoxLayout(self.list_params)
-        self.horizontalLayout_16.setSpacing(3)
+        self.horizontalLayout_16.setSpacing(10)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
         self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
         self.add_music_btn = QPushButton(self.list_params)
         self.add_music_btn.setObjectName(u"add_music_btn")
         sizePolicy3.setHeightForWidth(self.add_music_btn.sizePolicy().hasHeightForWidth())
         self.add_music_btn.setSizePolicy(sizePolicy3)
-        self.add_music_btn.setMinimumSize(QSize(25, 25))
+        self.add_music_btn.setMinimumSize(QSize(0, 0))
+        self.add_music_btn.setMaximumSize(QSize(40, 40))
         icon3 = QIcon()
-        icon3.addFile(u":/icon/icons/add_circle.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon3.addFile(u":/icon/icons/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.add_music_btn.setIcon(icon3)
-        self.add_music_btn.setIconSize(QSize(30, 30))
+        self.add_music_btn.setIconSize(QSize(40, 40))
 
         self.horizontalLayout_16.addWidget(self.add_music_btn)
 
-        self.sort_playlist = QPushButton(self.list_params)
-        self.sort_playlist.setObjectName(u"sort_playlist")
-        sizePolicy3.setHeightForWidth(self.sort_playlist.sizePolicy().hasHeightForWidth())
-        self.sort_playlist.setSizePolicy(sizePolicy3)
+        self.sort_list = QPushButton(self.list_params)
+        self.sort_list.setObjectName(u"sort_list")
+        sizePolicy3.setHeightForWidth(self.sort_list.sizePolicy().hasHeightForWidth())
+        self.sort_list.setSizePolicy(sizePolicy3)
+        self.sort_list.setMaximumSize(QSize(30, 30))
+        self.sort_list.setStyleSheet(u"")
         icon4 = QIcon()
-        icon4.addFile(u":/icon/icons/format_list_bullet.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.sort_playlist.setIcon(icon4)
-        self.sort_playlist.setIconSize(QSize(30, 30))
+        icon4.addFile(u":/icon/icons/sort-desc.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon4.addFile(u":/icon/icons/sort-asc.svg", QSize(), QIcon.Mode.Normal, QIcon.State.On)
+        self.sort_list.setIcon(icon4)
+        self.sort_list.setIconSize(QSize(30, 30))
+        self.sort_list.setCheckable(True)
 
-        self.horizontalLayout_16.addWidget(self.sort_playlist)
+        self.horizontalLayout_16.addWidget(self.sort_list)
 
 
         self.l.addWidget(self.list_params, 0, Qt.AlignmentFlag.AlignRight)
@@ -608,21 +618,18 @@ class Ui_MainWindow(object):
         if (self.playlist_Widget.columnCount() < 3):
             self.playlist_Widget.setColumnCount(3)
         __qtablewidgetitem = QTableWidgetItem()
-        __qtablewidgetitem.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
         self.playlist_Widget.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
         self.playlist_Widget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
         self.playlist_Widget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
-        if (self.playlist_Widget.rowCount() < 20):
-            self.playlist_Widget.setRowCount(20)
         self.playlist_Widget.setObjectName(u"playlist_Widget")
         sizePolicy2.setHeightForWidth(self.playlist_Widget.sizePolicy().hasHeightForWidth())
         self.playlist_Widget.setSizePolicy(sizePolicy2)
         self.playlist_Widget.setMinimumSize(QSize(0, 0))
         font1 = QFont()
         font1.setFamilies([u"Onest ExtraBold"])
-        font1.setBold(False)
+        font1.setBold(True)
         font1.setItalic(False)
         font1.setKerning(True)
         self.playlist_Widget.setFont(font1)
@@ -707,7 +714,7 @@ class Ui_MainWindow(object):
         self.playlist_Widget.setSortingEnabled(False)
         self.playlist_Widget.setWordWrap(True)
         self.playlist_Widget.setCornerButtonEnabled(True)
-        self.playlist_Widget.setRowCount(20)
+        self.playlist_Widget.setRowCount(0)
         self.playlist_Widget.setColumnCount(3)
         self.playlist_Widget.horizontalHeader().setVisible(True)
         self.playlist_Widget.horizontalHeader().setMinimumSectionSize(50)
@@ -1033,6 +1040,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
         self.horizontalFrame = QFrame(self.right_panel)
         self.horizontalFrame.setObjectName(u"horizontalFrame")
+        self.horizontalFrame.setContextMenuPolicy(Qt.ContextMenuPolicy.NoContextMenu)
+        self.horizontalFrame.setLineWidth(0)
         self.horizontalLayout_11 = QHBoxLayout(self.horizontalFrame)
         self.horizontalLayout_11.setSpacing(0)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
@@ -1057,12 +1066,17 @@ class Ui_MainWindow(object):
 "/* \u0417\u0430\u043f\u043e\u043b\u043d\u0435\u043d\u043d\u0430\u044f \u0447\u0430\u0441\u0442\u044c \u0434\u043e\u0440\u043e\u0436\u043a\u0438 */\n"
 "QSlider::sub-page:horizontal {\n"
 "    height: 4px;\n"
-"    background: #1DB954;  /* \u0444\u0438\u0440\u043c\u0435\u043d\u043d\u044b\u0439 \u0437\u0435\u043b\u0435\u043d\u044b\u0439 Spotify */\n"
+"    background: #FFF; \n"
 "    border-radius: 2px;\n"
 "}\n"
 "\n"
-"/* \u041f\u043e\u043b\u0437\u0443\u043d\u043e\u043a (\u043f\u043e \u0443\u043c\u043e\u043b\u0447"
-                        "\u0430\u043d\u0438\u044e) */\n"
+"/* \u041c\u0435\u043d\u044f\u0435\u0442 \u0446\u0432\u0435\u0442 \u0437\u0430\u043f\u043e\u043b\u043d\u0435\u043d\u043d\u043e\u0439 \u0447\u0430\u0441\u0442\u0438 \u043f\u0440\u0438 \u043d\u0430\u0436\u0430\u0442"
+                        "\u0438\u0438 */\n"
+"QSlider::sub-page:horizontal:hover {\n"
+"    background: #1DB954;\n"
+"}\n"
+"\n"
+"/* \u041f\u043e\u043b\u0437\u0443\u043d\u043e\u043a (\u043f\u043e \u0443\u043c\u043e\u043b\u0447\u0430\u043d\u0438\u044e) */\n"
 "QSlider::handle:horizontal {\n"
 "    width: 12px;\n"
 "    height: 12px;\n"
@@ -1072,24 +1086,9 @@ class Ui_MainWindow(object):
 "    border-radius: 6px;\n"
 "}\n"
 "\n"
-"/* \u041f\u043e\u043b\u0437\u0443\u043d\u043e\u043a \u043f\u0440\u0438 \u043d\u0430\u0436\u0430\u0442\u0438\u0438 */\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    width: 16px;\n"
-"    height: 16px;\n"
-"    margin: -6px 0;\n"
-"    border-radius: 8px;\n"
-"    background: #1ED760;  /* \u0441\u0432\u0435\u0442\u043b\u044b\u0439 \u0437\u0435\u043b\u0435\u043d\u044b\u0439 \u043f\u0440\u0438 \u0430\u043a\u0442\u0438\u0432\u0430\u0446\u0438\u0438 */\n"
-"}\n"
-"\n"
 "/* \u041d\u0435\u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0435 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 */\n"
 "QSlider:disabled {\n"
 "    opacity: 0.3;\n"
-"}\n"
-"\n"
-"/* \u0414"
-                        "\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u043e: \u0442\u043e\u043d\u043a\u0430\u044f \u0430\u043d\u0438\u043c\u0430\u0446\u0438\u044f (\u0435\u0441\u043b\u0438 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u0442\u0441\u044f) */\n"
-"QSlider::handle:horizontal {\n"
-"    transition: all 0.2s ease;\n"
 "}")
         self.vol = QHBoxLayout(self.volume_settings)
         self.vol.setSpacing(10)
@@ -1298,9 +1297,6 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.playback_btn_list.setDefault(False)
-
-
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
@@ -1319,7 +1315,7 @@ class Ui_MainWindow(object):
         self.playback_btn_list.setText("")
         self.shuffle_btn_list.setText("")
         self.add_music_btn.setText("")
-        self.sort_playlist.setText("")
+        self.sort_list.setText("")
         ___qtablewidgetitem = self.playlist_Widget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435", None));
         ___qtablewidgetitem1 = self.playlist_Widget.horizontalHeaderItem(1)
