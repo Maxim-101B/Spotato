@@ -111,7 +111,7 @@
       <property name="layoutDirection">
        <enum>Qt::LayoutDirection::LeftToRight</enum>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,3,1">
+      <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="2,3,0">
        <property name="spacing">
         <number>8</number>
        </property>
@@ -143,7 +143,7 @@
          </property>
          <property name="maximumSize">
           <size>
-           <width>400</width>
+           <width>380</width>
            <height>16777215</height>
           </size>
          </property>
@@ -180,10 +180,7 @@
             </property>
             <property name="styleSheet">
              <string notr="true">#Content_L{
-	padding-left: 12px;
-	padding-right: 12px;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding: 20px 12px;
 }
 
 QLabel {
@@ -446,7 +443,7 @@ QLabel{
 	color: white;  
     border: none;
     border-radius: 16px;
-	padding: 0px, 3px, 0px, 0px;
+	padding: 0px 3px 0px 3px;
 	font: 75 15px &quot;Onest&quot;;
 	font-weight: bold;
 }
@@ -477,7 +474,7 @@ QPushButton:checked {
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QPushButton" name="radio_mode">
+                 <widget class="QPushButton" name="playlist_mode">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -511,7 +508,7 @@ QPushButton:checked {
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="playlist_mode">
+                 <widget class="QPushButton" name="radio_mode">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -663,7 +660,7 @@ QPushButton:checked {
          </property>
          <property name="maximumSize">
           <size>
-           <width>900</width>
+           <width>1120</width>
            <height>16777215</height>
           </size>
          </property>
@@ -682,10 +679,7 @@ QFrame {
 	border-radius: 10px;
 	background-color: rgb(18, 18, 18);
 	color: white;
-	padding-left: 0px;
-	padding-right: 0px;
-	padding-top: 0px;
-	padding-bottom: 10px;    
+	padding: 0px, 10px, 0px, 0px;
 }
 
 #playlist_Widget{
@@ -788,9 +782,15 @@ QScrollBar:horizontal {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>608</width>
-               <height>594</height>
+               <width>590</width>
+               <height>1056</height>
               </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
              </property>
              <property name="styleSheet">
               <string notr="true">#scroll_widget {
@@ -817,7 +817,7 @@ QScrollBar:horizontal {
               <item alignment="Qt::AlignmentFlag::AlignTop">
                <widget class="QFrame" name="playlist_frame">
                 <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
@@ -844,7 +844,7 @@ QScrollBar:horizontal {
                  <item alignment="Qt::AlignmentFlag::AlignTop">
                   <widget class="QFrame" name="main_top_frame">
                    <property name="sizePolicy">
-                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
@@ -858,7 +858,7 @@ QScrollBar:horizontal {
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
-                     <height>200</height>
+                     <height>300</height>
                     </size>
                    </property>
                    <property name="styleSheet">
@@ -958,7 +958,7 @@ QLabel{
                  <item alignment="Qt::AlignmentFlag::AlignTop">
                   <widget class="QFrame" name="list_control">
                    <property name="sizePolicy">
-                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
@@ -974,8 +974,7 @@ QLabel{
                    </property>
                    <property name="styleSheet">
                     <string notr="true">#list_control{
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 0px 10px;
 }
 
 QPushButton{
@@ -1220,7 +1219,7 @@ QPushButton{
                  <item>
                   <widget class="QFrame" name="playlist_widget_frame">
                    <property name="sizePolicy">
-                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
@@ -1241,40 +1240,46 @@ QPushButton{
                     <property name="bottomMargin">
                      <number>0</number>
                     </property>
-                    <item alignment="Qt::AlignmentFlag::AlignTop">
-                     <widget class="QTableWidget" name="playlist_Widget">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>0</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Onest ExtraBold</family>
-                        <pointsize>-1</pointsize>
-                        <italic>false</italic>
-                        <bold>true</bold>
-                        <kerning>true</kerning>
-                       </font>
-                      </property>
-                      <property name="contextMenuPolicy">
-                       <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
-                      </property>
-                      <property name="layoutDirection">
-                       <enum>Qt::LayoutDirection::LeftToRight</enum>
-                      </property>
-                      <property name="autoFillBackground">
-                       <bool>false</bool>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">/* Основные стили таблицы */
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTableWidget" name="playlist_Widget">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Onest ExtraBold</family>
+                  <pointsize>-1</pointsize>
+                  <italic>false</italic>
+                  <bold>true</bold>
+                  <kerning>true</kerning>
+                 </font>
+                </property>
+                <property name="contextMenuPolicy">
+                 <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+                </property>
+                <property name="layoutDirection">
+                 <enum>Qt::LayoutDirection::LeftToRight</enum>
+                </property>
+                <property name="autoFillBackground">
+                 <bool>false</bool>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">/* Основные стили таблицы */
 QTableWidget {
     background-color: rgb(18, 18, 18);
     color: white;
@@ -1333,106 +1338,120 @@ QTableWidget::item:selected {
 QTableWidget::item:focus {
     outline: none;
 }</string>
-                      </property>
-                      <property name="verticalScrollBarPolicy">
-                       <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-                      </property>
-                      <property name="horizontalScrollBarPolicy">
-                       <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-                      </property>
-                      <property name="sizeAdjustPolicy">
-                       <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
-                      </property>
-                      <property name="editTriggers">
-                       <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
-                      </property>
-                      <property name="tabKeyNavigation">
-                       <bool>false</bool>
-                      </property>
-                      <property name="showDropIndicator" stdset="0">
-                       <bool>false</bool>
-                      </property>
-                      <property name="dragDropOverwriteMode">
-                       <bool>false</bool>
-                      </property>
-                      <property name="selectionMode">
-                       <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
-                      </property>
-                      <property name="selectionBehavior">
-                       <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
-                      </property>
-                      <property name="iconSize">
-                       <size>
-                        <width>0</width>
-                        <height>0</height>
-                       </size>
-                      </property>
-                      <property name="verticalScrollMode">
-                       <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
-                      </property>
-                      <property name="horizontalScrollMode">
-                       <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
-                      </property>
-                      <property name="showGrid">
-                       <bool>false</bool>
-                      </property>
-                      <property name="gridStyle">
-                       <enum>Qt::PenStyle::NoPen</enum>
-                      </property>
-                      <property name="sortingEnabled">
-                       <bool>false</bool>
-                      </property>
-                      <property name="wordWrap">
-                       <bool>true</bool>
-                      </property>
-                      <property name="cornerButtonEnabled">
-                       <bool>true</bool>
-                      </property>
-                      <property name="rowCount">
-                       <number>0</number>
-                      </property>
-                      <property name="columnCount">
-                       <number>3</number>
-                      </property>
-                      <attribute name="horizontalHeaderVisible">
-                       <bool>true</bool>
-                      </attribute>
-                      <attribute name="horizontalHeaderMinimumSectionSize">
-                       <number>50</number>
-                      </attribute>
-                      <attribute name="horizontalHeaderDefaultSectionSize">
-                       <number>160</number>
-                      </attribute>
-                      <attribute name="horizontalHeaderStretchLastSection">
-                       <bool>true</bool>
-                      </attribute>
-                      <attribute name="verticalHeaderMinimumSectionSize">
-                       <number>30</number>
-                      </attribute>
-                      <attribute name="verticalHeaderStretchLastSection">
-                       <bool>false</bool>
-                      </attribute>
-                      <column>
-                       <property name="text">
-                        <string>Название</string>
-                       </property>
-                      </column>
-                      <column>
-                       <property name="text">
-                        <string>Альбом</string>
-                       </property>
-                      </column>
-                      <column>
-                       <property name="text">
-                        <string>Длительность</string>
-                       </property>
-                      </column>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                </layout>
+                </property>
+                <property name="verticalScrollBarPolicy">
+                 <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+                </property>
+                <property name="horizontalScrollBarPolicy">
+                 <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+                </property>
+                <property name="sizeAdjustPolicy">
+                 <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
+                </property>
+                <property name="editTriggers">
+                 <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                </property>
+                <property name="tabKeyNavigation">
+                 <bool>false</bool>
+                </property>
+                <property name="showDropIndicator" stdset="0">
+                 <bool>false</bool>
+                </property>
+                <property name="dragDropOverwriteMode">
+                 <bool>false</bool>
+                </property>
+                <property name="selectionMode">
+                 <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+                </property>
+                <property name="selectionBehavior">
+                 <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
+                </property>
+                <property name="showGrid">
+                 <bool>false</bool>
+                </property>
+                <property name="gridStyle">
+                 <enum>Qt::PenStyle::NoPen</enum>
+                </property>
+                <property name="sortingEnabled">
+                 <bool>false</bool>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="cornerButtonEnabled">
+                 <bool>true</bool>
+                </property>
+                <property name="rowCount">
+                 <number>20</number>
+                </property>
+                <property name="columnCount">
+                 <number>3</number>
+                </property>
+                <attribute name="horizontalHeaderVisible">
+                 <bool>true</bool>
+                </attribute>
+                <attribute name="horizontalHeaderMinimumSectionSize">
+                 <number>50</number>
+                </attribute>
+                <attribute name="horizontalHeaderDefaultSectionSize">
+                 <number>160</number>
+                </attribute>
+                <attribute name="horizontalHeaderStretchLastSection">
+                 <bool>true</bool>
+                </attribute>
+                <attribute name="verticalHeaderMinimumSectionSize">
+                 <number>30</number>
+                </attribute>
+                <attribute name="verticalHeaderStretchLastSection">
+                 <bool>false</bool>
+                </attribute>
+                <row/>
+                <row/>
+                <row/>
+                <row/>
+                <row/>
+                <row/>
+                <row/>
+                <row/>
+                <row/>
+                <row/>
+                <row/>
+                <row/>
+                <row/>
+                <row/>
+                <row/>
+                <row/>
+                <row/>
+                <row/>
+                <row/>
+                <row/>
+                <column>
+                 <property name="text">
+                  <string>Название</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Альбом</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Длительность</string>
+                 </property>
+                </column>
                </widget>
               </item>
              </layout>
@@ -1461,20 +1480,42 @@ QTableWidget::item:focus {
          </property>
          <property name="maximumSize">
           <size>
-           <width>16777215</width>
+           <width>388</width>
            <height>16777215</height>
           </size>
          </property>
          <property name="styleSheet">
           <string notr="true">#RightSideBar{
-	border-radius: 10px;
 	background-color: rgb(18, 18, 18);
 	color: white;
+	padding: 0px, 0px, 0px, 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
-</string>
+
+#Content_R{
+	border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+QLabel{
+    font-family: &quot;Onest ExtraBold&quot;;
+    font-weight: 800; /* Extra Bold */
+    font-size: 14px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+QWidget{
+	background-color: rgb(18, 18, 18);
+	border: none;	
+}</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+          <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
          <property name="flat">
           <bool>true</bool>
@@ -1516,20 +1557,7 @@ QTableWidget::item:focus {
              <enum>Qt::LayoutDirection::LeftToRight</enum>
             </property>
             <property name="styleSheet">
-             <string notr="true">QLabel{
-    font-family: &quot;Onest ExtraBold&quot;;
-    font-weight: 800; /* Extra Bold */
-    font-size: 14px;
-    color: white;
-    background-color: transparent;
-    border: none;
-    padding: 0px;
-    margin: 0px;
-}
-
-#Content_R{
-	padding: 0px, 10px, 0px, 10px;
-}</string>
+             <string notr="true"/>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_5">
              <property name="spacing">
@@ -1550,7 +1578,7 @@ QTableWidget::item:focus {
              <item>
               <widget class="QFrame" name="top_rsb">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -1562,27 +1590,32 @@ QTableWidget::item:focus {
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true">QLabel{
+                <string notr="true">#top_rsb{
+	border-radius: 10px;
+}
+
+QLabel{
 	font: 800 11pt &quot;Onest&quot;;
 }
 
 QPushButton{
 	background: transparent;
 	border: none;
-}</string>
+}
+</string>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_7">
                 <property name="spacing">
                  <number>0</number>
                 </property>
                 <property name="leftMargin">
-                 <number>15</number>
+                 <number>20</number>
                 </property>
                 <property name="topMargin">
                  <number>0</number>
                 </property>
                 <property name="rightMargin">
-                 <number>15</number>
+                 <number>20</number>
                 </property>
                 <property name="bottomMargin">
                  <number>0</number>
@@ -1590,7 +1623,7 @@ QPushButton{
                 <item alignment="Qt::AlignmentFlag::AlignLeft">
                  <widget class="QLabel" name="playlist_name_rsb">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -1637,58 +1670,405 @@ QPushButton{
              </item>
              <item>
               <widget class="QScrollArea" name="scrollArea_2">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">/* Вертикальная полоса прокрутки в стиле Spotify */
+QScrollBar:vertical {
+    border: none;
+    background: #121212; /* Темный фон как в Spotify */
+    width: 5px; /* Ширина полосы прокрутки */
+    margin: 0px 0px 0px 0px;
+}
+
+/* Слайдер (handle) полосы прокрутки */
+QScrollBar::handle:vertical {
+    background: #535353; /* Серый цвет как у неактивных элементов */
+    min-height: 30px; /* Минимальная высота handle */
+    max-height: 40px;
+    border-radius: 2.4px; /* Закругленные углы */
+}
+
+/* Слайдер при наведении */
+QScrollBar::handle:vertical:hover {
+    background: #686868; /* Светлее при наведении */
+}
+
+/* Слайдер при нажатии */
+QScrollBar::handle:vertical:pressed {
+    background: #1DB954; /* Зеленый Spotify при активном взаимодействии */
+}
+
+/* Верхняя и нижняя кнопки (стрелки) - скрываем */
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: none;
+    background: none;
+    height: 0px;
+}
+
+/* Дополнительное пространство сверху и снизу */
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+/* Горизонтальная полоса - скрываем */
+QScrollBar:horizontal {
+    height: 0px;
+}</string>
+               </property>
+               <property name="verticalScrollBarPolicy">
+                <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+               </property>
+               <property name="horizontalScrollBarPolicy">
+                <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+               </property>
+               <property name="sizeAdjustPolicy">
+                <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustIgnored</enum>
+               </property>
                <property name="widgetResizable">
                 <bool>true</bool>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
                </property>
                <widget class="QWidget" name="scroll_rsb">
                 <property name="geometry">
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>318</width>
-                  <height>542</height>
+                  <width>315</width>
+                  <height>715</height>
                  </rect>
                 </property>
-                <widget class="QFrame" name="verticalFrame">
-                 <property name="geometry">
-                  <rect>
-                   <x>20</x>
-                   <y>20</y>
-                   <width>275</width>
-                   <height>275</height>
-                  </rect>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="layoutDirection">
+                 <enum>Qt::LayoutDirection::LeftToRight</enum>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_9" stretch="0,0,0">
+                 <property name="spacing">
+                  <number>15</number>
                  </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>275</width>
-                   <height>275</height>
-                  </size>
+                 <property name="sizeConstraint">
+                  <enum>QLayout::SizeConstraint::SetMinimumSize</enum>
                  </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>500</width>
-                   <height>500</height>
-                  </size>
+                 <property name="leftMargin">
+                  <number>0</number>
                  </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_3">
-                  <property name="spacing">
-                   <number>0</number>
-                  </property>
-                  <item>
-                   <widget class="QLabel" name="label">
-                    <property name="text">
-                     <string/>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>15</number>
+                 </property>
+                 <item>
+                  <widget class="QFrame" name="cov">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>270</width>
+                     <height>270</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>348</height>
+                    </size>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_8">
+                    <property name="spacing">
+                     <number>0</number>
                     </property>
-                    <property name="pixmap">
-                     <pixmap resource="res.qrc">:/images/img/default_cover.jpg</pixmap>
+                    <property name="leftMargin">
+                     <number>20</number>
                     </property>
-                    <property name="scaledContents">
-                     <bool>true</bool>
+                    <property name="topMargin">
+                     <number>0</number>
                     </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
+                    <property name="rightMargin">
+                     <number>20</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QFrame" name="gridFrame">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>270</width>
+                        <height>270</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>348</width>
+                        <height>348</height>
+                       </size>
+                      </property>
+                      <layout class="QGridLayout" name="gridLayout">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item row="0" column="0">
+                        <widget class="QLabel" name="cover">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="layoutDirection">
+                          <enum>Qt::LayoutDirection::LeftToRight</enum>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true"/>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="pixmap">
+                          <pixmap resource="res.qrc">:/images/img/The_Dark_Side_of_the_Moon.png</pixmap>
+                         </property>
+                         <property name="scaledContents">
+                          <bool>true</bool>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
+                         </property>
+                         <property name="margin">
+                          <number>0</number>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="crnt_track_frame">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_6">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>20</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>20</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QFrame" name="rsb_crnt_track">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLabel{
+	font: 700 15pt &quot;Onest&quot;;
+}
+
+#rsb_artist_lb{
+	font: 600 12pt &quot;Onest&quot;;
+	color: #8E8D8D;
+}</string>
+                      </property>
+                      <layout class="QVBoxLayout" name="a_2">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="rsb_track_title_lb">
+                         <property name="text">
+                          <string>Track Title</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="rsb_artist_lb">
+                         <property name="text">
+                          <string>Artist</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="track_info">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QTextEdit{
+	border-radius: 10px;
+	background-color: rgb(31, 31, 31);
+}</string>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_19">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>20</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>20</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QFrame" name="verticalFrame">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_3">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QTextEdit" name="textEdit">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>350</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </widget>
              </item>
@@ -2554,7 +2934,7 @@ QSlider::handle:horizontal {
                       <string/>
                      </property>
                      <property name="pixmap">
-                      <pixmap resource="res.qrc">:/images/img/default_cover.jpg</pixmap>
+                      <pixmap resource="res.qrc">:/images/img/The_Dark_Side_of_the_Moon.png</pixmap>
                      </property>
                      <property name="scaledContents">
                       <bool>true</bool>
@@ -2565,7 +2945,7 @@ QSlider::handle:horizontal {
                  </widget>
                 </item>
                 <item>
-                 <widget class="QFrame" name="audio_frame">
+                 <widget class="QFrame" name="pp_crnt_track">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -2579,7 +2959,6 @@ QSlider::handle:horizontal {
 
 #pp_artist_lb{
 	font: 600 9pt &quot;Onest&quot;;
-	
 	color: #8E8D8D;
 }</string>
                   </property>
