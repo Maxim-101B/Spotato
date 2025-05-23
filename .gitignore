@@ -4,7 +4,7 @@ __pycache__/
 .env
 /dist
 /build
-/spotato.egg-info
+spotato.egg-info/
 .idea/
 .vscode/
 *.qrc
