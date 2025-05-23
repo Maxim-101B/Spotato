@@ -19,8 +19,8 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplicat
     QGridLayout, QGroupBox, QHBoxLayout, QHeaderView,
     QLabel, QLayout, QListView, QMainWindow,
     QPushButton, QScrollArea, QSizePolicy, QSlider,
-    QTabWidget, QTableWidget, QTableWidgetItem, QVBoxLayout,
-    QWidget)
+    QTabWidget, QTableWidget, QTableWidgetItem, QTextEdit,
+    QVBoxLayout, QWidget)
 from . import res_rc
 
 class Ui_MainWindow(object):
@@ -323,25 +323,25 @@ class Ui_MainWindow(object):
         self.MainBar.setMinimumSize(QSize(600, 0))
         self.MainBar.setMaximumSize(QSize(1120, 16777215))
         self.MainBar.setStyleSheet(u"QScrollArea {\n"
-"    background-color: rgb(18, 18, 18);\n"
+"	background-color: transparent;\n"
 "    border: none;\n"
 "}\n"
 "\n"
 "QFrame {\n"
-"    background-color: rgb(18, 18, 18);\n"
+"	background-color: transparent;\n"
 "    border: none;\n"
 "}\n"
 "\n"
 "#MainBar {\n"
 "	border-radius: 10px;\n"
-"	background-color: rgb(18, 18, 18);\n"
+"	background-color: transparent;;\n"
 "	color: white;\n"
 "	padding: 0px, 10px, 0px, 0px;\n"
-"}\n"
+"	background: qlineargradient(spread:pad, x1:0.495341, y1:0, x2:0.499512, y2:0.636, stop:0 rgba(114, 0, 255, 220), stop:0.604878 rgba(18, 18, 18, 255))}\n"
 "\n"
 "#playlist_Widget{\n"
 "	border: none;\n"
-"	background-color: rgba(0, 0, 0, 0);\n"
+"	background-color: transparent;;\n"
 "}\n"
 "\n"
 "QLabel{\n"
@@ -354,9 +354,9 @@ class Ui_MainWindow(object):
 "    padding: 0px;\n"
 "    margin: 0px;\n"
 "    qproperty-wordWrap: false; /* \u041f\u0435\u0440\u0435\u043d\u043e\u0441 \u0441\u043b\u043e\u0432 */\n"
-"    qproperty-indent: 0; /* \u041e\u0442\u0441\u0442\u0443\u043f \u043f\u0435\u0440\u0432\u043e\u0439 \u0441\u0442\u0440\u043e\u043a\u0438 */\n"
-"    qproperty-margin: 0; /* \u0412\u043d\u0435\u0448\u043d\u0438\u0435 \u043e\u0442\u0441"
-                        "\u0442\u0443\u043f\u044b */\n"
+"    qproperty-indent: 0; /* \u041e\u0442\u0441\u0442\u0443\u043f \u043f\u0435\u0440\u0432\u043e\u0439 \u0441"
+                        "\u0442\u0440\u043e\u043a\u0438 */\n"
+"    qproperty-margin: 0; /* \u0412\u043d\u0435\u0448\u043d\u0438\u0435 \u043e\u0442\u0441\u0442\u0443\u043f\u044b */\n"
 "}\n"
 "\n"
 "")
@@ -371,17 +371,17 @@ class Ui_MainWindow(object):
 "QScrollBar:vertical {\n"
 "    border: none;\n"
 "    background: #121212; /* \u0422\u0435\u043c\u043d\u044b\u0439 \u0444\u043e\u043d \u043a\u0430\u043a \u0432 Spotify */\n"
-"    width: 10px; /* \u0428\u0438\u0440\u0438\u043d\u0430 \u043f\u043e\u043b\u043e\u0441\u044b \u043f\u0440\u043e\u043a\u0440\u0443\u0442\u043a\u0438 */\n"
+"    width: 6px; /* \u0428\u0438\u0440\u0438\u043d\u0430 \u043f\u043e\u043b\u043e\u0441\u044b \u043f\u0440\u043e\u043a\u0440\u0443\u0442\u043a\u0438 */\n"
 "    margin: 0px 0px 0px 0px;\n"
 "}\n"
 "\n"
 "/* \u0421\u043b\u0430\u0439\u0434\u0435\u0440 (handle) \u043f\u043e\u043b\u043e\u0441\u044b \u043f\u0440\u043e\u043a\u0440\u0443\u0442\u043a\u0438 */\n"
 "QScrollBar::handle:vertical {\n"
 "    background: #535353; /* \u0421\u0435\u0440\u044b\u0439 \u0446\u0432\u0435\u0442 \u043a\u0430\u043a \u0443 \u043d\u0435\u0430\u043a\u0442\u0438\u0432\u043d\u044b\u0445 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u0432 */\n"
-"    min-he"
-                        "ight: 30px; /* \u041c\u0438\u043d\u0438\u043c\u0430\u043b\u044c\u043d\u0430\u044f \u0432\u044b\u0441\u043e\u0442\u0430 handle */\n"
+"    min-hei"
+                        "ght: 30px; /* \u041c\u0438\u043d\u0438\u043c\u0430\u043b\u044c\u043d\u0430\u044f \u0432\u044b\u0441\u043e\u0442\u0430 handle */\n"
 "    max-height: 40px;\n"
-"    border-radius: 5px; /* \u0417\u0430\u043a\u0440\u0443\u0433\u043b\u0435\u043d\u043d\u044b\u0435 \u0443\u0433\u043b\u044b */\n"
+"    border-radius: 3px; /* \u0417\u0430\u043a\u0440\u0443\u0433\u043b\u0435\u043d\u043d\u044b\u0435 \u0443\u0433\u043b\u044b */\n"
 "}\n"
 "\n"
 "/* \u0421\u043b\u0430\u0439\u0434\u0435\u0440 \u043f\u0440\u0438 \u043d\u0430\u0432\u0435\u0434\u0435\u043d\u0438\u0438 */\n"
@@ -417,8 +417,10 @@ class Ui_MainWindow(object):
         self.scroll_widget = QWidget()
         self.scroll_widget.setObjectName(u"scroll_widget")
         self.scroll_widget.setGeometry(QRect(0, 0, 600, 594))
+        sizePolicy1.setHeightForWidth(self.scroll_widget.sizePolicy().hasHeightForWidth())
+        self.scroll_widget.setSizePolicy(sizePolicy1)
         self.scroll_widget.setStyleSheet(u"#scroll_widget {\n"
-"    background-color: rgb(18, 18, 18);\n"
+"    background-color: transparent;\n"
 "    border: none;\n"
 "}")
         self.verticalLayout_20 = QVBoxLayout(self.scroll_widget)
@@ -427,32 +429,36 @@ class Ui_MainWindow(object):
         self.verticalLayout_20.setContentsMargins(0, 0, 0, 0)
         self.playlist_frame = QFrame(self.scroll_widget)
         self.playlist_frame.setObjectName(u"playlist_frame")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.playlist_frame.sizePolicy().hasHeightForWidth())
-        self.playlist_frame.setSizePolicy(sizePolicy4)
-        self.playlist_frame.setStyleSheet(u"")
+        sizePolicy1.setHeightForWidth(self.playlist_frame.sizePolicy().hasHeightForWidth())
+        self.playlist_frame.setSizePolicy(sizePolicy1)
+        self.playlist_frame.setStyleSheet(u"#playlist_frame{\n"
+"	background-color: transparent;\n"
+"}")
         self.p = QVBoxLayout(self.playlist_frame)
         self.p.setSpacing(5)
         self.p.setObjectName(u"p")
         self.p.setContentsMargins(0, 0, 0, 0)
         self.main_top_frame = QFrame(self.playlist_frame)
         self.main_top_frame.setObjectName(u"main_top_frame")
-        sizePolicy2.setHeightForWidth(self.main_top_frame.sizePolicy().hasHeightForWidth())
-        self.main_top_frame.setSizePolicy(sizePolicy2)
-        self.main_top_frame.setMinimumSize(QSize(0, 200))
-        self.main_top_frame.setMaximumSize(QSize(16777215, 200))
+        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Expanding)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.main_top_frame.sizePolicy().hasHeightForWidth())
+        self.main_top_frame.setSizePolicy(sizePolicy4)
+        self.main_top_frame.setMinimumSize(QSize(0, 150))
+        self.main_top_frame.setMaximumSize(QSize(16777215, 300))
         self.main_top_frame.setStyleSheet(u"#main_top_frame{\n"
-"	border: 1px solid white;\n"
 "    border-top-left-radius: 10px;\n"
 "    border-top-right-radius: 10px;\n"
 "	padding: 2px;\n"
 "}\n"
 "\n"
 "QLabel{\n"
-"	font-size: 52px;\n"
-"}")
+"	font-size: 48px;\n"
+"	background-color: transparent;\n"
+"}\n"
+"\n"
+"")
         self.playlist_cover = QVBoxLayout(self.main_top_frame)
         self.playlist_cover.setSpacing(0)
         self.playlist_cover.setObjectName(u"playlist_cover")
@@ -461,27 +467,63 @@ class Ui_MainWindow(object):
         self.main_top.setObjectName(u"main_top")
         self.main_top.setStyleSheet(u"")
         self.horizontalLayout_15 = QHBoxLayout(self.main_top)
-        self.horizontalLayout_15.setSpacing(8)
+        self.horizontalLayout_15.setSpacing(0)
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
         self.horizontalLayout_15.setContentsMargins(0, 0, 0, 0)
-        self.playlist_cov = QLabel(self.main_top)
+        self.main_top_frame_2 = QFrame(self.main_top)
+        self.main_top_frame_2.setObjectName(u"main_top_frame_2")
+        self.tfdtdt = QHBoxLayout(self.main_top_frame_2)
+        self.tfdtdt.setSpacing(0)
+        self.tfdtdt.setObjectName(u"tfdtdt")
+        self.tfdtdt.setContentsMargins(0, 0, 0, 0)
+        self.playlist_cov_frame = QFrame(self.main_top_frame_2)
+        self.playlist_cov_frame.setObjectName(u"playlist_cov_frame")
+        sizePolicy3.setHeightForWidth(self.playlist_cov_frame.sizePolicy().hasHeightForWidth())
+        self.playlist_cov_frame.setSizePolicy(sizePolicy3)
+        self.verticalLayout_13 = QVBoxLayout(self.playlist_cov_frame)
+        self.verticalLayout_13.setSpacing(0)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.playlist_cov = QLabel(self.playlist_cov_frame)
         self.playlist_cov.setObjectName(u"playlist_cov")
         sizePolicy3.setHeightForWidth(self.playlist_cov.sizePolicy().hasHeightForWidth())
         self.playlist_cov.setSizePolicy(sizePolicy3)
         self.playlist_cov.setMinimumSize(QSize(130, 130))
-        self.playlist_cov.setPixmap(QPixmap(u":/icon/icons/music_info.png"))
+        self.playlist_cov.setMaximumSize(QSize(150, 150))
+        self.playlist_cov.setPixmap(QPixmap(u":/images/img/IMG_1752-Photoroom.png"))
         self.playlist_cov.setScaledContents(True)
 
-        self.horizontalLayout_15.addWidget(self.playlist_cov)
+        self.verticalLayout_13.addWidget(self.playlist_cov)
 
-        self.playlist_name = QLabel(self.main_top)
+
+        self.tfdtdt.addWidget(self.playlist_cov_frame)
+
+        self.playlist_name_frame = QFrame(self.main_top_frame_2)
+        self.playlist_name_frame.setObjectName(u"playlist_name_frame")
+        sizePolicy3.setHeightForWidth(self.playlist_name_frame.sizePolicy().hasHeightForWidth())
+        self.playlist_name_frame.setSizePolicy(sizePolicy3)
+        self.playlist_name_frame.setStyleSheet(u"")
+        self.verticalLayout_12 = QVBoxLayout(self.playlist_name_frame)
+        self.verticalLayout_12.setSpacing(0)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.playlist_name = QLabel(self.playlist_name_frame)
         self.playlist_name.setObjectName(u"playlist_name")
+        sizePolicy3.setHeightForWidth(self.playlist_name.sizePolicy().hasHeightForWidth())
+        self.playlist_name.setSizePolicy(sizePolicy3)
         font = QFont()
         font.setFamilies([u"Onest ExtraBold"])
         font.setWeight(QFont.ExtraBold)
         self.playlist_name.setFont(font)
+        self.playlist_name.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.horizontalLayout_15.addWidget(self.playlist_name)
+        self.verticalLayout_12.addWidget(self.playlist_name)
+
+
+        self.tfdtdt.addWidget(self.playlist_name_frame)
+
+
+        self.horizontalLayout_15.addWidget(self.main_top_frame_2, 0, Qt.AlignmentFlag.AlignLeft)
 
 
         self.playlist_cover.addWidget(self.main_top)
@@ -491,8 +533,8 @@ class Ui_MainWindow(object):
 
         self.list_control = QFrame(self.playlist_frame)
         self.list_control.setObjectName(u"list_control")
-        sizePolicy2.setHeightForWidth(self.list_control.sizePolicy().hasHeightForWidth())
-        self.list_control.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.list_control.sizePolicy().hasHeightForWidth())
+        self.list_control.setSizePolicy(sizePolicy4)
         self.list_control.setMinimumSize(QSize(0, 55))
         self.list_control.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.list_control.setStyleSheet(u"#list_control{\n"
@@ -512,7 +554,7 @@ class Ui_MainWindow(object):
         self.l = QHBoxLayout(self.list_control)
         self.l.setSpacing(0)
         self.l.setObjectName(u"l")
-        self.l.setContentsMargins(0, 5, 0, 0)
+        self.l.setContentsMargins(0, 0, 0, 0)
         self.playback_controls = QFrame(self.list_control)
         self.playback_controls.setObjectName(u"playback_controls")
         sizePolicy3.setHeightForWidth(self.playback_controls.sizePolicy().hasHeightForWidth())
@@ -602,8 +644,11 @@ class Ui_MainWindow(object):
 
         self.playlist_widget_frame = QFrame(self.playlist_frame)
         self.playlist_widget_frame.setObjectName(u"playlist_widget_frame")
-        sizePolicy2.setHeightForWidth(self.playlist_widget_frame.sizePolicy().hasHeightForWidth())
-        self.playlist_widget_frame.setSizePolicy(sizePolicy2)
+        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.playlist_widget_frame.sizePolicy().hasHeightForWidth())
+        self.playlist_widget_frame.setSizePolicy(sizePolicy5)
         self.verticalLayout_18 = QVBoxLayout(self.playlist_widget_frame)
         self.verticalLayout_18.setSpacing(0)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
@@ -632,7 +677,6 @@ class Ui_MainWindow(object):
         self.playlist_Widget.setAutoFillBackground(False)
         self.playlist_Widget.setStyleSheet(u"/* \u041e\u0441\u043d\u043e\u0432\u043d\u044b\u0435 \u0441\u0442\u0438\u043b\u0438 \u0442\u0430\u0431\u043b\u0438\u0446\u044b */\n"
 "QTableWidget {\n"
-"    background-color: rgb(18, 18, 18);\n"
 "    color: white;\n"
 "    gridline-color: rgba(255, 255, 255, 30%);  /* \u041f\u043e\u043b\u0443\u043f\u0440\u043e\u0437\u0440\u0430\u0447\u043d\u044b\u0435 \u043b\u0438\u043d\u0438\u0438 */\n"
 "	border: none;\n"
@@ -648,13 +692,13 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QHeaderView::section {\n"
-"    background-color: rgb(18, 18, 18);\n"
+"    background-color: transparent;\n"
 "    color: white;\n"
 "    padding: 10px 15px;\n"
 "    border: none;\n"
-"    border-bottom: 1px"
-                        " solid rgba(255, 255, 255, 20%);\n"
-"    font-weight: bold;\n"
+"    border-bottom: 1px solid rgba(255, 255, 255, 20%);\n"
+"    font-w"
+                        "eight: bold;\n"
 "}\n"
 "\n"
 "/* \u0413\u043e\u0440\u0438\u0437\u043e\u043d\u0442\u0430\u043b\u044c\u043d\u044b\u0435 \u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043a\u0438 (\u0432\u0435\u0440\u0445\u043d\u0438\u0435) */\n"
@@ -666,20 +710,22 @@ class Ui_MainWindow(object):
 "QHeaderView::section:vertical {\n"
 "    border-right: none;\n"
 "    border-bottom: none;\n"
+"	background-color: rgb(18, 18, 18);\n"
 "	qproperty-alignment: 'AlignCenter';\n"
 "}\n"
 "\n"
 "/* \u0423\u0433\u043b\u043e\u0432\u043e\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442 */\n"
 "QTableCornerButton::section {\n"
-"    background-color: rgb(18, 18, 18);\n"
+"    background-color: transparent;\n"
 "    border: none;\n"
 "    border-bottom: 1px solid rgba(255, 255, 255, 20%);\n"
 "}\n"
 "\n"
-"/* \u0421\u0442\u0438\u043b\u0438 \u0434\u043b\u044f \u044f\u0447\u0435\u0435\u043a *"
-                        "/\n"
-"QTableWidget::item {\n"
+"/* \u0421\u0442\u0438\u043b\u0438 \u0434\u043b\u044f \u044f\u0447\u0435\u0435\u043a */\n"
+"QTabl"
+                        "eWidget::item {\n"
 "    padding: 8px 15px;\n"
+"	background-color: rgb(18, 18, 18);\n"
 "}\n"
 "\n"
 "/* \u0412\u044b\u0434\u0435\u043b\u0435\u043d\u043d\u0430\u044f \u0441\u0442\u0440\u043e\u043a\u0430 */\n"
@@ -740,9 +786,16 @@ class Ui_MainWindow(object):
         self.RightSideBar.setMinimumSize(QSize(320, 0))
         self.RightSideBar.setMaximumSize(QSize(388, 16777215))
         self.RightSideBar.setStyleSheet(u"#RightSideBar{\n"
-"	border-radius: 10px;\n"
 "	background-color: rgb(18, 18, 18);\n"
 "	color: white;\n"
+"	padding: 0px, 0px, 0px, 0px;\n"
+"    border-top-left-radius: 10px;\n"
+"    border-top-right-radius: 10px;\n"
+"}\n"
+"\n"
+"#Content_R{\n"
+"	border-top-left-radius: 10px;\n"
+"    border-top-right-radius: 10px;\n"
 "}\n"
 "\n"
 "QLabel{\n"
@@ -758,9 +811,8 @@ class Ui_MainWindow(object):
 "\n"
 "QWidget{\n"
 "	background-color: rgb(18, 18, 18);\n"
-"	border: none;\n"
-"}\n"
-"")
+"	border: none;	\n"
+"}")
         self.RightSideBar.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.RightSideBar.setFlat(True)
         self.verticalLayout_7 = QVBoxLayout(self.RightSideBar)
@@ -784,14 +836,19 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.top_rsb.sizePolicy().hasHeightForWidth())
         self.top_rsb.setSizePolicy(sizePolicy)
         self.top_rsb.setMinimumSize(QSize(0, 50))
-        self.top_rsb.setStyleSheet(u"QLabel{\n"
+        self.top_rsb.setStyleSheet(u"#top_rsb{\n"
+"	border-radius: 10px;\n"
+"}\n"
+"\n"
+"QLabel{\n"
 "	font: 800 11pt \"Onest\";\n"
 "}\n"
 "\n"
 "QPushButton{\n"
 "	background: transparent;\n"
 "	border: none;\n"
-"}")
+"}\n"
+"")
         self.horizontalLayout_7 = QHBoxLayout(self.top_rsb)
         self.horizontalLayout_7.setSpacing(0)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
@@ -804,23 +861,28 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_7.addWidget(self.playlist_name_rsb, 0, Qt.AlignmentFlag.AlignLeft)
 
-        self.pushButton = QPushButton(self.top_rsb)
-        self.pushButton.setObjectName(u"pushButton")
-        sizePolicy2.setHeightForWidth(self.pushButton.sizePolicy().hasHeightForWidth())
-        self.pushButton.setSizePolicy(sizePolicy2)
-        self.pushButton.setMaximumSize(QSize(30, 30))
+        self.close_rsb_btn = QPushButton(self.top_rsb)
+        self.close_rsb_btn.setObjectName(u"close_rsb_btn")
+        sizePolicy2.setHeightForWidth(self.close_rsb_btn.sizePolicy().hasHeightForWidth())
+        self.close_rsb_btn.setSizePolicy(sizePolicy2)
+        self.close_rsb_btn.setMaximumSize(QSize(30, 30))
         icon5 = QIcon()
         icon5.addFile(u":/icon/icons/close_50.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton.setIcon(icon5)
-        self.pushButton.setIconSize(QSize(25, 25))
+        self.close_rsb_btn.setIcon(icon5)
+        self.close_rsb_btn.setIconSize(QSize(25, 25))
 
-        self.horizontalLayout_7.addWidget(self.pushButton, 0, Qt.AlignmentFlag.AlignRight)
+        self.horizontalLayout_7.addWidget(self.close_rsb_btn, 0, Qt.AlignmentFlag.AlignRight)
 
 
         self.verticalLayout_5.addWidget(self.top_rsb)
 
         self.scrollArea_2 = QScrollArea(self.Content_R)
         self.scrollArea_2.setObjectName(u"scrollArea_2")
+        sizePolicy6 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.MinimumExpanding)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.scrollArea_2.sizePolicy().hasHeightForWidth())
+        self.scrollArea_2.setSizePolicy(sizePolicy6)
         self.scrollArea_2.setStyleSheet(u"/* \u0412\u0435\u0440\u0442\u0438\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043f\u043e\u043b\u043e\u0441\u0430 \u043f\u0440\u043e\u043a\u0440\u0443\u0442\u043a\u0438 \u0432 \u0441\u0442\u0438\u043b\u0435 Spotify */\n"
 "QScrollBar:vertical {\n"
 "    border: none;\n"
@@ -873,45 +935,44 @@ class Ui_MainWindow(object):
         self.scroll_rsb = QWidget()
         self.scroll_rsb.setObjectName(u"scroll_rsb")
         self.scroll_rsb.setGeometry(QRect(0, 0, 320, 554))
-        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.MinimumExpanding)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.scroll_rsb.sizePolicy().hasHeightForWidth())
-        self.scroll_rsb.setSizePolicy(sizePolicy5)
+        sizePolicy1.setHeightForWidth(self.scroll_rsb.sizePolicy().hasHeightForWidth())
+        self.scroll_rsb.setSizePolicy(sizePolicy1)
         self.scroll_rsb.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.scroll_rsb.setStyleSheet(u"")
         self.verticalLayout_9 = QVBoxLayout(self.scroll_rsb)
         self.verticalLayout_9.setSpacing(15)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.verticalLayout_9.setSizeConstraint(QLayout.SizeConstraint.SetMinimumSize)
-        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_9.setContentsMargins(0, 0, 0, 15)
         self.cov = QFrame(self.scroll_rsb)
         self.cov.setObjectName(u"cov")
-        sizePolicy4.setHeightForWidth(self.cov.sizePolicy().hasHeightForWidth())
-        self.cov.setSizePolicy(sizePolicy4)
-        self.cov.setMinimumSize(QSize(0, 0))
-        self.cov.setMaximumSize(QSize(16777215, 388))
+        sizePolicy5.setHeightForWidth(self.cov.sizePolicy().hasHeightForWidth())
+        self.cov.setSizePolicy(sizePolicy5)
+        self.cov.setMinimumSize(QSize(270, 270))
+        self.cov.setMaximumSize(QSize(16777215, 348))
         self.verticalLayout_8 = QVBoxLayout(self.cov)
         self.verticalLayout_8.setSpacing(0)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.verticalLayout_8.setContentsMargins(20, 0, 20, 0)
-        self.gridFrame = QFrame(self.cov)
-        self.gridFrame.setObjectName(u"gridFrame")
-        sizePolicy1.setHeightForWidth(self.gridFrame.sizePolicy().hasHeightForWidth())
-        self.gridFrame.setSizePolicy(sizePolicy1)
-        self.gridFrame.setMaximumSize(QSize(348, 348))
-        self.gridLayout = QGridLayout(self.gridFrame)
+        self.crnt_track_gridFrame = QFrame(self.cov)
+        self.crnt_track_gridFrame.setObjectName(u"crnt_track_gridFrame")
+        sizePolicy1.setHeightForWidth(self.crnt_track_gridFrame.sizePolicy().hasHeightForWidth())
+        self.crnt_track_gridFrame.setSizePolicy(sizePolicy1)
+        self.crnt_track_gridFrame.setMinimumSize(QSize(275, 275))
+        self.crnt_track_gridFrame.setMaximumSize(QSize(350, 350))
+        self.gridLayout = QGridLayout(self.crnt_track_gridFrame)
         self.gridLayout.setSpacing(0)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.cover = QLabel(self.gridFrame)
+        self.cover = QLabel(self.crnt_track_gridFrame)
         self.cover.setObjectName(u"cover")
-        sizePolicy6 = QSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Ignored)
-        sizePolicy6.setHorizontalStretch(0)
-        sizePolicy6.setVerticalStretch(0)
-        sizePolicy6.setHeightForWidth(self.cover.sizePolicy().hasHeightForWidth())
-        self.cover.setSizePolicy(sizePolicy6)
-        self.cover.setMinimumSize(QSize(270, 270))
-        self.cover.setMaximumSize(QSize(348, 348))
+        sizePolicy7 = QSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Ignored)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.cover.sizePolicy().hasHeightForWidth())
+        self.cover.setSizePolicy(sizePolicy7)
+        self.cover.setMinimumSize(QSize(0, 0))
+        self.cover.setMaximumSize(QSize(16777215, 16777215))
         self.cover.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.cover.setStyleSheet(u"")
         self.cover.setPixmap(QPixmap(u":/images/img/The_Dark_Side_of_the_Moon.png"))
@@ -922,7 +983,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.cover, 0, 0, 1, 1)
 
 
-        self.verticalLayout_8.addWidget(self.gridFrame)
+        self.verticalLayout_8.addWidget(self.crnt_track_gridFrame)
 
 
         self.verticalLayout_9.addWidget(self.cov)
@@ -932,6 +993,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.crnt_track_frame.sizePolicy().hasHeightForWidth())
         self.crnt_track_frame.setSizePolicy(sizePolicy)
         self.crnt_track_frame.setMinimumSize(QSize(0, 50))
+        self.crnt_track_frame.setMaximumSize(QSize(16777215, 50))
         self.verticalLayout_6 = QVBoxLayout(self.crnt_track_frame)
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
@@ -970,11 +1032,46 @@ class Ui_MainWindow(object):
 
         self.track_info = QFrame(self.scroll_rsb)
         self.track_info.setObjectName(u"track_info")
-        self.track_info.setMinimumSize(QSize(0, 197))
+        sizePolicy1.setHeightForWidth(self.track_info.sizePolicy().hasHeightForWidth())
+        self.track_info.setSizePolicy(sizePolicy1)
+        self.track_info.setStyleSheet(u"QTextEdit{\n"
+"    font-family: \"Onest\";\n"
+"    font-weight: 800; /* Extra Bold */\n"
+"    font-size: 14px;\n"
+"    color: rgb(206, 206, 206);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    padding: 10px;\n"
+"    margin: 0px;\n"
+"}")
         self.verticalLayout_19 = QVBoxLayout(self.track_info)
         self.verticalLayout_19.setSpacing(0)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
-        self.verticalLayout_19.setContentsMargins(50, 0, 20, 0)
+        self.verticalLayout_19.setContentsMargins(20, 0, 20, 0)
+        self.track_meta = QFrame(self.track_info)
+        self.track_meta.setObjectName(u"track_meta")
+        sizePolicy1.setHeightForWidth(self.track_meta.sizePolicy().hasHeightForWidth())
+        self.track_meta.setSizePolicy(sizePolicy1)
+        self.track_meta.setMinimumSize(QSize(0, 0))
+        self.track_meta.setStyleSheet(u"background-color: rgb(31, 31, 31);\n"
+"border-radius: 9px;\n"
+"\n"
+"")
+        self.verticalLayout_3 = QVBoxLayout(self.track_meta)
+        self.verticalLayout_3.setSpacing(0)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.textEdit = QTextEdit(self.track_meta)
+        self.textEdit.setObjectName(u"textEdit")
+        self.textEdit.setMinimumSize(QSize(0, 0))
+        self.textEdit.setStyleSheet(u"background-color: transparent;\n"
+"")
+
+        self.verticalLayout_3.addWidget(self.textEdit)
+
+
+        self.verticalLayout_19.addWidget(self.track_meta)
+
 
         self.verticalLayout_9.addWidget(self.track_info)
 
@@ -999,7 +1096,7 @@ class Ui_MainWindow(object):
         self.Playback.setSizePolicy(sizePolicy1)
         self.Playback.setMinimumSize(QSize(100, 0))
         self.Playback.setMaximumSize(QSize(16777215, 100))
-        self.Playback.setStyleSheet(u"background-color: rgb(0, 0, 0);\n"
+        self.Playback.setStyleSheet(u"background-color: transparent;\n"
 "border: none;\n"
 "")
         self.verticalLayout_11 = QVBoxLayout(self.Playback)
@@ -1013,10 +1110,10 @@ class Ui_MainWindow(object):
         self.control_panel.setMinimumSize(QSize(0, 0))
         self.control_panel.setMaximumSize(QSize(16777215, 16777215))
         self.control_panel.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
-        self.control_panel.setStyleSheet(u"#control_panel{\n"
-"	padding: 0px;\n"
-"	margin: 0px;\n"
-"}\n"
+        self.control_panel.setStyleSheet(u"padding: 0px;\n"
+"margin: 0px;\n"
+"background-color: rgb(0, 0, 0);\n"
+"border: none;\n"
 "\n"
 "")
         self.horizontalLayout = QHBoxLayout(self.control_panel)
@@ -1025,11 +1122,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.right_panel = QFrame(self.control_panel)
         self.right_panel.setObjectName(u"right_panel")
-        sizePolicy7 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
-        sizePolicy7.setHorizontalStretch(0)
-        sizePolicy7.setVerticalStretch(0)
-        sizePolicy7.setHeightForWidth(self.right_panel.sizePolicy().hasHeightForWidth())
-        self.right_panel.setSizePolicy(sizePolicy7)
+        sizePolicy8 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
+        sizePolicy8.setHorizontalStretch(0)
+        sizePolicy8.setVerticalStretch(0)
+        sizePolicy8.setHeightForWidth(self.right_panel.sizePolicy().hasHeightForWidth())
+        self.right_panel.setSizePolicy(sizePolicy8)
         self.right_panel.setMinimumSize(QSize(350, 0))
         self.right_panel.setMaximumSize(QSize(16777215, 16777215))
         self.right_panel.setStyleSheet(u"QLabel{\n"
@@ -1144,6 +1241,7 @@ class Ui_MainWindow(object):
         self.equalizer_brn.setObjectName(u"equalizer_brn")
         sizePolicy3.setHeightForWidth(self.equalizer_brn.sizePolicy().hasHeightForWidth())
         self.equalizer_brn.setSizePolicy(sizePolicy3)
+        self.equalizer_brn.setMaximumSize(QSize(30, 30))
         icon6 = QIcon()
         icon6.addFile(u":/icon/icons/instant_mix.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.equalizer_brn.setIcon(icon6)
@@ -1155,6 +1253,7 @@ class Ui_MainWindow(object):
         self.song_info_btn.setObjectName(u"song_info_btn")
         sizePolicy3.setHeightForWidth(self.song_info_btn.sizePolicy().hasHeightForWidth())
         self.song_info_btn.setSizePolicy(sizePolicy3)
+        self.song_info_btn.setMaximumSize(QSize(30, 30))
         icon7 = QIcon()
         icon7.addFile(u":/icon/icons/music_info.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.song_info_btn.setIcon(icon7)
@@ -1206,15 +1305,27 @@ class Ui_MainWindow(object):
         self.horizontalLayout_12.setSpacing(15)
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
         self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.replay_5 = QPushButton(self.dj)
+        self.replay_5.setObjectName(u"replay_5")
+        sizePolicy3.setHeightForWidth(self.replay_5.sizePolicy().hasHeightForWidth())
+        self.replay_5.setSizePolicy(sizePolicy3)
+        self.replay_5.setMaximumSize(QSize(32, 32))
+        icon8 = QIcon()
+        icon8.addFile(u":/icon/icons/replay_5.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.replay_5.setIcon(icon8)
+        self.replay_5.setIconSize(QSize(35, 35))
+
+        self.horizontalLayout_12.addWidget(self.replay_5)
+
         self.skip_previous = QPushButton(self.dj)
         self.skip_previous.setObjectName(u"skip_previous")
         sizePolicy3.setHeightForWidth(self.skip_previous.sizePolicy().hasHeightForWidth())
         self.skip_previous.setSizePolicy(sizePolicy3)
         self.skip_previous.setMinimumSize(QSize(30, 30))
         self.skip_previous.setMaximumSize(QSize(30, 30))
-        icon8 = QIcon()
-        icon8.addFile(u":/icon/icons/skip_previous.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.skip_previous.setIcon(icon8)
+        icon9 = QIcon()
+        icon9.addFile(u":/icon/icons/skip_previous.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.skip_previous.setIcon(icon9)
         self.skip_previous.setIconSize(QSize(45, 45))
 
         self.horizontalLayout_12.addWidget(self.skip_previous)
@@ -1227,10 +1338,10 @@ class Ui_MainWindow(object):
         self.playback_btn.setMaximumSize(QSize(45, 45))
         self.playback_btn.setAutoFillBackground(False)
         self.playback_btn.setStyleSheet(u"")
-        icon9 = QIcon()
-        icon9.addFile(u":/icon/icons/play_arrow.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        icon9.addFile(u":/icon/icons/pause1.svg", QSize(), QIcon.Mode.Normal, QIcon.State.On)
-        self.playback_btn.setIcon(icon9)
+        icon10 = QIcon()
+        icon10.addFile(u":/icon/icons/play_arrow.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon10.addFile(u":/icon/icons/pause1.svg", QSize(), QIcon.Mode.Normal, QIcon.State.On)
+        self.playback_btn.setIcon(icon10)
         self.playback_btn.setIconSize(QSize(35, 35))
         self.playback_btn.setCheckable(True)
         self.playback_btn.setChecked(False)
@@ -1244,12 +1355,24 @@ class Ui_MainWindow(object):
         self.skip_next.setSizePolicy(sizePolicy3)
         self.skip_next.setMinimumSize(QSize(30, 30))
         self.skip_next.setMaximumSize(QSize(30, 30))
-        icon10 = QIcon()
-        icon10.addFile(u":/icon/icons/skip_next.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.skip_next.setIcon(icon10)
+        icon11 = QIcon()
+        icon11.addFile(u":/icon/icons/skip_next.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.skip_next.setIcon(icon11)
         self.skip_next.setIconSize(QSize(45, 45))
 
         self.horizontalLayout_12.addWidget(self.skip_next)
+
+        self.forward_5 = QPushButton(self.dj)
+        self.forward_5.setObjectName(u"forward_5")
+        sizePolicy3.setHeightForWidth(self.forward_5.sizePolicy().hasHeightForWidth())
+        self.forward_5.setSizePolicy(sizePolicy3)
+        self.forward_5.setMaximumSize(QSize(32, 32))
+        icon12 = QIcon()
+        icon12.addFile(u":/icon/icons/forward_5.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.forward_5.setIcon(icon12)
+        self.forward_5.setIconSize(QSize(35, 35))
+
+        self.horizontalLayout_12.addWidget(self.forward_5)
 
 
         self.verticalLayout_2.addWidget(self.dj, 0, Qt.AlignmentFlag.AlignHCenter)
@@ -1277,6 +1400,17 @@ class Ui_MainWindow(object):
 "    margin: -4px 0;\n"
 "    background: white;\n"
 "    border-radius: 6px;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"    font-family: \"Onest\";\n"
+"    font-weight: 800; /* Extra Bold */\n"
+"    font-size: 14px;\n"
+"    color: rgb(206, 206, 206);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    padding: 0px;\n"
+"    margin: 0px;\n"
 "}")
         self.horizontalLayout_13 = QHBoxLayout(self.slider)
         self.horizontalLayout_13.setSpacing(10)
@@ -1294,11 +1428,11 @@ class Ui_MainWindow(object):
 
         self.SeekBar = QSlider(self.slider)
         self.SeekBar.setObjectName(u"SeekBar")
-        sizePolicy8 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
-        sizePolicy8.setHorizontalStretch(100)
-        sizePolicy8.setVerticalStretch(0)
-        sizePolicy8.setHeightForWidth(self.SeekBar.sizePolicy().hasHeightForWidth())
-        self.SeekBar.setSizePolicy(sizePolicy8)
+        sizePolicy9 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
+        sizePolicy9.setHorizontalStretch(100)
+        sizePolicy9.setVerticalStretch(0)
+        sizePolicy9.setHeightForWidth(self.SeekBar.sizePolicy().hasHeightForWidth())
+        self.SeekBar.setSizePolicy(sizePolicy9)
         self.SeekBar.setMinimumSize(QSize(0, 30))
         self.SeekBar.setMaximumSize(QSize(640, 16777215))
         self.SeekBar.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
@@ -1329,11 +1463,11 @@ class Ui_MainWindow(object):
 
         self.left_panel = QFrame(self.control_panel)
         self.left_panel.setObjectName(u"left_panel")
-        sizePolicy9 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Expanding)
-        sizePolicy9.setHorizontalStretch(0)
-        sizePolicy9.setVerticalStretch(0)
-        sizePolicy9.setHeightForWidth(self.left_panel.sizePolicy().hasHeightForWidth())
-        self.left_panel.setSizePolicy(sizePolicy9)
+        sizePolicy10 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Expanding)
+        sizePolicy10.setHorizontalStretch(0)
+        sizePolicy10.setVerticalStretch(0)
+        sizePolicy10.setHeightForWidth(self.left_panel.sizePolicy().hasHeightForWidth())
+        self.left_panel.setSizePolicy(sizePolicy10)
         self.left_panel.setMinimumSize(QSize(350, 0))
         self.left_panel.setMaximumSize(QSize(16777215, 16777215))
         self.left_panel.setStyleSheet(u"")
@@ -1343,8 +1477,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
         self.lp_frame = QFrame(self.left_panel)
         self.lp_frame.setObjectName(u"lp_frame")
-        sizePolicy4.setHeightForWidth(self.lp_frame.sizePolicy().hasHeightForWidth())
-        self.lp_frame.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lp_frame.sizePolicy().hasHeightForWidth())
+        self.lp_frame.setSizePolicy(sizePolicy5)
         self.lp_frame.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.lp_frame.setStyleSheet(u"#lp_frame{\n"
 "	padding: 0px 15px;\n"
@@ -1446,15 +1580,17 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem2 = self.playlist_Widget.horizontalHeaderItem(2)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043b\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c", None));
         self.playlist_name_rsb.setText(QCoreApplication.translate("MainWindow", u"\u041b\u044e\u0431\u0438\u043c\u044b\u0435 \u0442\u0440\u0435\u043a\u0438", None))
-        self.pushButton.setText("")
+        self.close_rsb_btn.setText("")
         self.cover.setText("")
-        self.rsb_track_title_lb.setText(QCoreApplication.translate("MainWindow", u"Track", None))
+        self.rsb_track_title_lb.setText(QCoreApplication.translate("MainWindow", u"Track Title", None))
         self.rsb_artist_lb.setText(QCoreApplication.translate("MainWindow", u"Artist", None))
         self.vol_icon.setText("")
         self.equalizer_brn.setText("")
         self.song_info_btn.setText("")
+        self.replay_5.setText("")
         self.skip_previous.setText("")
         self.skip_next.setText("")
+        self.forward_5.setText("")
         self.CurrentTime.setText(QCoreApplication.translate("MainWindow", u"00:00", None))
         self.EndTime.setText(QCoreApplication.translate("MainWindow", u"00:00", None))
         self.small_cover.setText("")
