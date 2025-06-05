@@ -19,7 +19,7 @@ class ChangeHandler(FileSystemEventHandler):
         if self.process:
             self.process.terminate()
         os.system('cls')
-        self.process = subprocess.Popen(
+        self.process = subprocess.Popen( 
             [sys.executable, "-m", "app.client.main"],
             stdin=sys.stdin,
             stdout=sys.stdout,

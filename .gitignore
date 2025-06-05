@@ -7,5 +7,3 @@ __pycache__/
 spotato.egg-info/
 .idea/
 .vscode/
-*.qrc
-*_rc.py
